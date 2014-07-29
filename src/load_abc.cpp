@@ -37,6 +37,8 @@
 #include "stdafx.h"
 #include "sndfile.h"
 
+#ifndef NO_MIDIFORMATS
+
 #include "load_pat.h"
 
 #if _MSC_VER >= 1600
@@ -4842,3 +4844,4 @@ BOOL CSoundFile::ReadABC(const uint8_t *lpStream, DWORD dwMemLength)
 	ABC_Cleanup(h);	// we dont need it anymore
 	return 1;
 }
+#endif // NO_MIDIFORMATS
