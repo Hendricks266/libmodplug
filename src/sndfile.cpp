@@ -24,8 +24,10 @@ extern void ITUnpack8Bit(signed char *pSample, DWORD dwLen, LPBYTE lpMemFile, DW
 extern void ITUnpack16Bit(signed char *pSample, DWORD dwLen, LPBYTE lpMemFile, DWORD dwMemLength, BOOL b215);
 
 
-#define MAX_PACK_TABLES		3
+#ifndef MODPLUG_NO_FILESAVE
+#ifndef NO_PACKING
 
+#define MAX_PACK_TABLES		3
 
 // Compression table
 static const signed char UnpackTable[MAX_PACK_TABLES][16] =
@@ -40,6 +42,8 @@ static const signed char UnpackTable[MAX_PACK_TABLES][16] =
 	{0, 1, 2, 3, 5, 7, 12, 19,
 	-1, -2, -3, -5, -7, -12, -19, -31}
 };
+#endif
+#endif
 
 
 //////////////////////////////////////////////////////////
